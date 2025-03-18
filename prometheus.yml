@@ -13,18 +13,18 @@ scrape_configs:
         refresh_interval: 5s # Refresh the list of targets every 5 seconds
 
   # n8n
-  - job_name: 'n8n' # Replace w/ your service's name
+  - job_name: 'n8n'
     dns_sd_configs:
-      - names: ['futureproof-n8n-discovery'] # Replace w/ your service's name + '-discovery'
-        port: 5678 # Replace w/ the port for your service's metrics endpoint
+      - names: ['futureproof-n8n-discovery']
+        port: 5678
         type: A
         refresh_interval: 5s
 
   # Grafana Loki
-  - job_name: 'loki' # Replace w/ your service's name
+  - job_name: 'loki'
     dns_sd_configs:
-      - names: ['futureproof-loki-discovery'] # Replace w/ your service's name + '-discovery'
-        port: 3100 # Replace w/ the port for your service's metrics endpoint
+      - names: ['futureproof-loki-discovery']
+        port: 3100 
         type: A
         refresh_interval: 5s
 
