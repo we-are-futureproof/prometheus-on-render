@@ -12,6 +12,22 @@ scrape_configs:
         type: A # Render service discovery uses A records
         refresh_interval: 5s # Refresh the list of targets every 5 seconds
 
+  # n8n
+  - job_name: 'n8n' # Replace w/ your service's name
+    dns_sd_configs:
+      - names: ['futureproof-n8n-discovery'] # Replace w/ your service's name + '-discovery'
+        port: 5678 # Replace w/ the port for your service's metrics endpoint
+        type: A
+        refresh_interval: 5s
+
+  # Grafana Loki
+  - job_name: 'loki' # Replace w/ your service's name
+    dns_sd_configs:
+      - names: ['futureproof-loki-discovery'] # Replace w/ your service's name + '-discovery'
+        port: 3100 # Replace w/ the port for your service's metrics endpoint
+        type: A
+        refresh_interval: 5s
+
   # Uncomment to add a job for scraping another Render service
   # - job_name: 'REPLACE_ME' # Replace w/ your service's name
   #   dns_sd_configs:
